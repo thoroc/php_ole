@@ -1,11 +1,11 @@
 <?php
 
-define(PpsType_Root, 5);
-define(PpsType_Dir, 1);
-define(PpsType_File, 2);
-define(DataSizeSmall, 0x1000);
-define(LongIntSize, 4);
-define(PpsSize, 0x80);
+define('PpsType_Root', 5);
+define('PpsType_Dir', 1);
+define('PpsType_File', 2);
+define('DataSizeSmall', 0x1000);
+define('LongIntSize', 4);
+define('PpsSize', 0x80);
 
 function Asc2Ucs($sAsc) {
     return implode("\x00", (preg_split('//', $sAsc, -1, PREG_SPLIT_NO_EMPTY)))."\x00";
