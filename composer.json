@@ -25,12 +25,12 @@
     "autoload": {
         "psr-0": { },
         "files": [
+            "src/functions.ole.php",
             "src/class.ole.php",
             "src/class.ole_pps.php",
             "src/class.ole_pps_dir.php",
             "src/class.ole_pps_file.php",
-            "src/class.ole_pps_root.php",
-            "src/functions.ole.php"
+            "src/class.ole_pps_root.php"            
         ]
     }
 }
