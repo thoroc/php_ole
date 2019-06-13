@@ -30,7 +30,7 @@
             "src/class.ole_pps_dir.php",
             "src/class.ole_pps_file.php",
             "src/class.ole_pps_root.php",
-            "src/function.ole.php"
+            "src/functions.ole.php"
         ]
     }
 }
