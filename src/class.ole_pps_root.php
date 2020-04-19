@@ -49,11 +49,9 @@ class ole_pps_root extends ole_pps {
 #------------------------------------------------------------------------------
 function save($sFile, $bNoAs=false, $rhInfo=false) {
 #0.Initial Setting for saving
-/*
   if (!$rhInfo) {
-    $rhInfo=new object();
+    $rhInfo=new \stdClass();
   }
-*/
 
   $rhInfo->_BIG_BLOCK_SIZE=pow(2, (($rhInfo->_BIG_BLOCK_SIZE) ?
                                   _adjust2($rhInfo->_BIG_BLOCK_SIZE) : 9));
