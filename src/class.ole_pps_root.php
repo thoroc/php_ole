@@ -49,11 +49,9 @@ class ole_pps_root extends ole_pps {
 #------------------------------------------------------------------------------
 function save($sFile, $bNoAs=false, $rhInfo=false) {
 #0.Initial Setting for saving
-/*
   if (!$rhInfo) {
-    $rhInfo=new object();
+    $rhInfo=new \stdClass();
   }
-*/
 
   $rhInfo->_BIG_BLOCK_SIZE=pow(2, (($rhInfo->_BIG_BLOCK_SIZE) ?
                                   _adjust2($rhInfo->_BIG_BLOCK_SIZE) : 9));
@@ -302,7 +300,7 @@ function _savePpsSetPnt2(&$aThis, &$raList, $rhInfo) {
       return 0xFFFFFFFF;
   } elseif (sizeof($aThis)==1) {
 #1.2 Just Only one
-      array_push($raList, &$aThis[0]);
+      $raList[] = &$aThis[0];
       $aThis[0]->No = sizeof($raList)-1;
       $aThis[0]->PrevPps = 0xFFFFFFFF;
       $aThis[0]->NextPps = 0xFFFFFFFF;
@@ -339,7 +337,7 @@ function _savePpsSetPnt2s(&$aThis, &$raList, $rhInfo) {
       return 0xFFFFFFFF;
   } elseif (sizeof($aThis)==1) {
 #1.2 Just Only one
-      array_push($raList, &$aThis[0]);
+      $raList[] = &$aThis[0];
       $aThis[0]->No = sizeof($raList)-1;
       $aThis[0]->PrevPps = 0xFFFFFFFF;
       $aThis[0]->NextPps = 0xFFFFFFFF;
@@ -377,7 +375,7 @@ function _savePpsSetPnt(&$aThis, &$raList, $rhInfo) {
       return 0xFFFFFFFF;
   } elseif (sizeof($aThis)==1) {
 #1.2 Just Only one
-      array_push($raList, &$aThis[0]);
+      $raList[] = &$aThis[0];
       $aThis[0]->No = sizeof($raList)-1;
       $aThis[0]->PrevPps = 0xFFFFFFFF;
       $aThis[0]->NextPps = 0xFFFFFFFF;
@@ -411,7 +409,7 @@ function _savePpsSetPnt1(&$aThis, &$raList, $rhInfo) {
       return 0xFFFFFFFF;
   } elseif (sizeof($aThis)==1) {
 #1.2 Just Only one
-      array_push($raList, &$aThis[0]);
+      $raList[] = &$aThis[0];
       $aThis[0]->No = sizeof($raList)-1;
       $aThis[0]->PrevPps = 0xFFFFFFFF;
       $aThis[0]->NextPps = 0xFFFFFFFF;
